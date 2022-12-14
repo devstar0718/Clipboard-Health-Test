@@ -16,3 +16,15 @@ Based on the information given, break this ticket down into 2-5 individual ticke
 You will be graded on the level of detail in each ticket, the clarity of the execution plan within and between tickets, and the intelligibility of your language. You don't need to be a native English speaker, but please proof-read your work.
 
 ## Your Breakdown Here
+
+1. Create a new table in database called `CustomIds` which stores customIds for facility and agent with the following columns:
+    - `id` - integer, primary key, auto-increment
+    - `facilityId` - integer, foreign key to `Facilities.id`
+    - `agentId` - integer, foreign key to `Agents.id`
+    - `customId` - string, unique
+
+2. Create a function named `getCustomIdByFacilityAndAgent` which takes a facilityId and agentId and returns the customId for that facility and agent. If no customId exists, return null.
+
+3. After calling `getShiftsByFacility`, call `getCustomIdByFacilityAndAgent` for each shift and replace the agentId with the customId if it exists.
+
+4. Call `generateReport` with the list of Shifts, which now have customIds instead of agentIds.

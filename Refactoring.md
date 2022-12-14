@@ -9,3 +9,9 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+
+As you can see in the test cases, this function returns different results in case of several kinds of inputs.
+
+The original function is a bit hard to read because it has so many if-cases and duplicated function use(createHash).
+
+I optimized the code by returning the result first for valid cases, and further processing later.
